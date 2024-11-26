@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Primary;
 public class MontadoraConfiguration {
 
     @Bean(name = "Aspirado")
-    @Primary
+   // @Primary // ele injeta o Aspirado
     public Motor motorAspirado() {
         var motor = new Motor();
         motor.setCavalo(120);
@@ -32,6 +32,7 @@ public class MontadoraConfiguration {
         return motor;
     }
 
+    @Primary
     @Bean(name = "motorTurbo")
     public Motor motorTurbo() {
         var motor = new Motor();
